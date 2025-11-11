@@ -1,0 +1,30 @@
+<div class="container p-4">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {{#each links}}
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <a href="{{this.url}}" target="_blank" class="text-decoration-none">
+                        <h3 class="card-title text-uppercase">{{this.title}}</h3>
+                    </a>
+                    <p class="card-text mb-3">{{this.description}}</p>
+                    <p>{{timeago this.created_at}}</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-center">
+                        <a href="/links/delete/{{this.id}}" class="btn btn-danger me-md-2">Delete Link</a>
+                        <a href="/links/edit/{{this.id}}" class="btn btn-secondary">Edit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{else}}
+        <div class="container min-vh-100 d-flex justify-content-center align-items-center">
+            <div class="card card-body text-center" style="max-width: 400px;">
+                <h5 class="card-title">No Links Found</h5>
+                <p class="card-text">Try adding some links!</p>
+                <a href="/links/add" class="btn btn-primary">Create One!</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

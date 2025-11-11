@@ -1,0 +1,22 @@
+{{! MENSAJES FLASH - CORREGIDO }}
+  {{#if success}}
+  <div class="container mt-4">
+    {{#each success}}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      {{this}}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+
+  {{#if error}}
+  <div class="container mt-4">
+    {{#each error}}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      {{this}}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
