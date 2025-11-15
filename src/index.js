@@ -47,8 +47,14 @@ app.use(flash());
 
 //global variables - DESPUÉS de session y flash
 app.use((req, res, next) => {
-  res.locals.success = req.flash("success");
-  res.locals.error = req.flash("error");
+  res.locals.success = req.session.successMessage || req.flash("success")[0] || null;
+  res.locals.error = req.session.errorMessage || req.flash("error")[0] || null;
+  res.locals.user = req.user || null;
+  
+  // Limpiar los mensajes de la sesión después de mostrarlos
+  delete req.session.successMessage;
+  delete req.session.errorMessage;
+  
   next();
 });
 
