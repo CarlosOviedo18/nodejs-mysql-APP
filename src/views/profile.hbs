@@ -1,0 +1,27 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h1 class="card-title mb-4">My Profile</h1>
+                    
+                    <div class="profile-section mb-4">
+                        <h5 class="text-muted">Welcome</h5>
+                        <p class="lead">{{user.fullname}}</p>
+                    </div>
+                    
+                    <div class="profile-section mb-4">
+                        <h5 class="text-muted">Username</h5>
+                        <p class="lead">@{{user.username}}</p>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <a class="btn btn-primary btn-lg" href="/links">
+                            <i class="fas fa-link"></i> Manage my Links
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
